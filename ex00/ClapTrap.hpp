@@ -25,6 +25,8 @@ public:
 	std::string	getName() const;
 	int			getAttackDamage() const;
 	int			getHitPoints() const;
+
+	void		setAttackDamage(int amount);
 };
 
 #endif

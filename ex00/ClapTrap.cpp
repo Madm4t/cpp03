@@ -76,3 +76,7 @@ int ClapTrap::getAttackDamage() const {
 int ClapTrap::getHitPoints() const {
 	return _hitPoints;
 }
+
+void ClapTrap::setAttackDamage(int amount) {
+	_attackDamage = amount;
+}

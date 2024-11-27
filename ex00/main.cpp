@@ -13,6 +13,7 @@ int main(void) {
 
 	std::cout << clap2.getName() << " has " << clap2.getHitPoints() << " HP left." << std::endl;
 
+	clap1.setAttackDamage(2);
 	for (int i = 0; i < 10; ++i) {
 		clap1.attack(clap2.getName());
 		clap2.takeDamage(clap1.getAttackDamage());
