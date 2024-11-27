@@ -21,5 +21,7 @@ int main(void) {
 	frag.attack(scav.getName());
 	scav.takeDamage(frag.getAttackDamage());
 
+	frag.highFivesGuys();
+
 	return (0);
 } 
