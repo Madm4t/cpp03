@@ -6,34 +6,28 @@
 /*   By: mgering <mgering@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 16:02:27 by mgering           #+#    #+#             */
-/*   Updated: 2024/12/10 16:02:28 by mgering          ###   ########.fr       */
+/*   Updated: 2024/12/10 17:12:50 by mgering          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
-
+#include "DiamondTrap.hpp"
 
 int main(void) {
-	ClapTrap clap("Clappy");
+	std::cout << "--- Test DiamondTrap default ---" << std::endl;
+	DiamondTrap diaTrap1;
+	diaTrap1.whoAmI();
+	std::cout << "--- Test DiamondTrap with name ---" << std::endl;
+	DiamondTrap diaTrap2("Peter");
+	diaTrap2.whoAmI();
 
-	clap.attack("Target A");
-	clap.takeDamage(5);
-	clap.beRepaired(3);
-
-	std::cout << std::endl;
-
-	FragTrap frag("Fraggy");
-	ScavTrap scav("Scavvy");
-
-	scav.attack(frag.getName());
-	frag.takeDamage(scav.getAttackDamage());
-	scav.guardGate();
-	frag.attack(scav.getName());
-	scav.takeDamage(frag.getAttackDamage());
-
-	frag.highFivesGuys();
-
+	diaTrap1.attack(diaTrap2.getName());
+	diaTrap2.takeDamage(diaTrap1.getAttackDamage());
+	for(int i = 0; i < 51; i++)
+		diaTrap2.beRepaired(10);
+	diaTrap2.attack(diaTrap1.getName());
+	
 	return (0);
 } 
